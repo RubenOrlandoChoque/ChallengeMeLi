@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/bg_yellow_gradient"
+            android:layout_height="200dp">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/ll_search"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@drawable/bg_search"
+                android:weightSum="2">
+
+                <AutoCompleteTextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/gray"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text|textNoSuggestions"
+                    android:id="@+id/txt_search"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:hint="Buscar en Mercado Libre"/>
+                <ImageView
+                    android:id="@+id/iv_clear_text"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                </ImageView>
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:layout_below="@id/ll_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/content_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="8dp"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardCornerRadius="6dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/not_found"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="No encontramos publicaciones"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/write_to_search"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:textSize="18dp"
+                                android:padding="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Escribe lo que deseas buscar"
+                                android:textAlignment="center"
+                                android:gravity="center_horizontal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/searching"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <pl.droidsonroids.gif.GifTextView
+                                android:layout_gravity="center"
+                                android:layout_width="80dp"
+                                android:layout_height="100dp"
+                                android:scaleType="centerInside"
+                                android:background="@drawable/searching"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/products_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

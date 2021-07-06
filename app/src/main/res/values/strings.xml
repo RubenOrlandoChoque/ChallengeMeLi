@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">mercadolibre</string>
+    <string name="title_activity_products_list">Buscador de Productos</string>
+    <string name="product_search_fragment_label">Buscar Productos</string>
+    <string name="product_detail_fragment_label">Producto</string>
+    <string name="original_price"><strike>$ 100</strike></string>
+</resources>
